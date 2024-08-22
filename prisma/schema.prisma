@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define the Student model
+model Student {
+  id               Int              @id @default(autoincrement())
+  name             String
+  email            String           @unique
+  codeforces       String?
+  codechef         String?
+  atcoder          String?
+  questionStatuses QuestionStatus[]
+}
+
+// Define the QuestionStatus model with an enum for status
+model QuestionStatus {
+  id         Int    @id @default(autoincrement())
+  studentId  Int
+  questionId Int
+  status     Status
+
+  student  Student  @relation(fields: [studentId], references: [id])
+  question Question @relation(fields: [questionId], references: [id])
+}
+
+model Question {
+  id               Int              @id @default(autoincrement())
+  platform         Platform
+  questionLink     String
+  questionStatuses QuestionStatus[]
+}
+
+// Enum for the status of a question
+enum Status {
+  solved
+  attempted
+  not_solved
+}
+
+// Enum for platforms
+enum Platform {
+  atcoder
+  codeforces
+  codechef
+  cses
+}
