@@ -17,10 +17,12 @@ generator client {
 model Student {
   id               Int              @id @default(autoincrement())
   name             String
+  rollNumber       String           @unique
   email            String           @unique
   codeforces       String?
   codechef         String?
   atcoder          String?
+  cses             String?
   questionStatuses QuestionStatus[]
 }
 
@@ -38,7 +40,7 @@ model QuestionStatus {
 model Question {
   id               Int              @id @default(autoincrement())
   platform         Platform
-  questionLink     String
+  questionLink     String           @unique
   questionStatuses QuestionStatus[]
 }
 

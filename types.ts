@@ -1,26 +1,40 @@
 type Student = {
-    id: string;
+    id?: string;
+    name: string;
+    email: string;
+    rollNumber: string;
     cpProfiles: {
-        codeforces: string;
-        codechef: string;
-        atcoder: string;
+        codeforces?: string;
+        codechef?: string;
+        atcoder?: string;
+        cses?: string;
     };
 };
 
 type Question = {
-    id: string;
-    platform: string;
+    platform: Platform;
     link: string;
 };
 
 type QuestionStatus = {
     studentId: string;
     questionId: string;
-    status: "accepted" | "attempted" | "unattempted";
+    status: Status;
 };
+enum Platform {
+    codeforces = "codeforces",
+    codechef = "codechef",
+    atcoder = "atcoder",
+    cses = "cses",
+}
+enum Status {
+    Accepted = "accepted",
+    Attempted = "attempted",
+    Unattempted = "unattempted",
+}
 
-export { Student, Question, QuestionStatus };
-
+export type { Student,Question,QuestionStatus};
+export { Platform,Status };
 
 /*
 
