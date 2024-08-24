@@ -1,0 +1,16 @@
+/* StudentPage.css */
+.student-page {
+    padding: 20px;
+    background-color: #2e2e2e; /* Dark background for the page */
+    color: #e0e0e0; /* Light text color for contrast */
+  }
+  
+  .student-page h1 {
+    font-size: 2rem;
+    color: #f1f1f1; /* Lighter color for headings */
+  }
+  
+  .student-page .data-table {
+    margin-top: 20px;
+  }
+  

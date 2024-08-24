@@ -1,0 +1,37 @@
+/* DataTable.css */
+.data-table {
+    border: solid 1px #555;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead {
+    background: #333;
+}
+
+.data-table th {
+    border-bottom: solid 2px #666;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: #2a2a2a;
+}
+
+.data-table tbody tr:nth-child(odd) {
+    background: #222;
+}
+
+.data-table td {
+    padding: 10px;
+    border: solid 1px #666;
+    color: #fff;
+}
+
+/* hide bluishness of anchor tagss */
+.data-table a {
+    color: #fff;
+    text-decoration: none;
+}

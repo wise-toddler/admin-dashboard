@@ -1,0 +1,52 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #424242; /* Darker background to match app */
+    padding: 1rem;
+    color: #e0e0e0; /* Light text color */
+    border-bottom: 1px solid #616161; /* Subtle border for separation */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: #bb86fc; /* Matching color with your App-link */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-links li {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-links a {
+    color: #e0e0e0; /* Consistent text color */
+    text-decoration: none;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+    color: #bb86fc; /* Color change on hover */
+}
+
+.auth-button {
+    background-color: #bb86fc; /* Accent color */
+    color: #121212; /* Dark text on button */
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #9a67ea; /* Slightly lighter on hover */
+}
+
+a {
+    color: #ffffff; /* Accent color */
+    text-decoration: none;
+}
